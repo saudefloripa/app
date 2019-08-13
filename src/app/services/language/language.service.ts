@@ -63,11 +63,12 @@ export class LanguageService {
   }
 
   private replaceLanguageInUrl(language: I18nLocale) {
-    const currentPath = `${location.pathname}${this.languageAppConfigService.originalBaseHref}${location.search}`;
+    const currentPath = `${location.pathname}${location.search}`;
     const currentPathslices = currentPath.split('/');
     currentPathslices[1] = language;
     const newPath = currentPathslices.join('/');
     const newUrl = location.href.replace(currentPath, newPath);
+    console.log("AQUI", currentPath, newPath, newUrl);
     this.replaceUrl(newUrl);
   }
 

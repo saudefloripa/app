@@ -9,7 +9,7 @@ export class LanguageAppConfigService {
 
   private isServer: boolean;
 
-  readonly originalBaseHref: string;
+  private originalBaseHref: string;
 
   constructor(
     private appModuleRef: NgModuleRef<AppModule>,
