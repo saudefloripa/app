@@ -40,6 +40,10 @@ export class LanguageAppConfigService {
     }
   }
 
+  get appBasePath() {
+    return this.originalBaseHref;
+  }
+
   private saveOriginalBaseHref() {
     if (!this.isServer) {
       this.originalBaseHref = this.baseHref;
