@@ -11,7 +11,7 @@ export class LanguageAppConfigService {
 
   private isServer: boolean;
 
-  private originalBaseHref: string;
+  originalBaseHref: string;
 
   private firstLoadDone = firstLoadDone;
 
