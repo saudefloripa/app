@@ -4,16 +4,14 @@ import { I18nLocale } from '@models/language';
 import { AppModule } from 'src/app/app.module';
 import { getAppGenericaLanguage } from './../functions';
 
-let firstLoadDone: boolean;
+let originalBaseHref: string;
 
 @Injectable()
 export class LanguageAppConfigService {
 
+  readonly originalBaseHref = originalBaseHref;
+
   private isServer: boolean;
-
-  originalBaseHref: string;
-
-  private firstLoadDone = firstLoadDone;
 
   constructor(
     private appModuleRef: NgModuleRef<AppModule>,
@@ -50,11 +48,9 @@ export class LanguageAppConfigService {
   }
 
   private saveOriginalBaseHref() {
-    console.log('is server', this.isServer, 'first load', this.firstLoadDone);
-    if (!this.isServer && !this.firstLoadDone) {
-      firstLoadDone = true;
+    if (!this.isServer && !this.originalBaseHref) {
       console.log('originalBaseHref', this.baseHref);
-      this.originalBaseHref = this.baseHref;
+      originalBaseHref = this.baseHref;
     }
   }
 

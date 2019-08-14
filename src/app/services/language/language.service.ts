@@ -66,10 +66,10 @@ export class LanguageService {
     const appBasePath = this.languageAppConfigService.originalBaseHref;
     const currentPath = `${location.pathname}${location.search}`;
     const currentPathslices = currentPath.replace(appBasePath, '').split('/');
-    currentPathslices[1] = language;
+    currentPathslices[0] = language;
     const newPath = `${appBasePath}${currentPathslices.join('/')}`;
     const newUrl = location.href.replace(currentPath, newPath);
-    console.log('>>>>>>>> AQUI 6', appBasePath, currentPath, newPath, newUrl);
+    console.log('>>>>>>>> AQUI 7', appBasePath, currentPath, newPath, newUrl);
     this.replaceUrl(newUrl);
   }
 

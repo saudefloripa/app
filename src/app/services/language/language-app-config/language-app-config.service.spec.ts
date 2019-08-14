@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
-import { LanguageAppConfigModule } from './language-app-config.module';
 import { LanguageAppConfigService } from './language-app-config.service';
+import { LanguageAppConfigServiceTestingModule } from './testing';
 
 describe('LanguageAppConfigService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [
-      LanguageAppConfigModule,
+      LanguageAppConfigServiceTestingModule,
     ]
   }));
 
