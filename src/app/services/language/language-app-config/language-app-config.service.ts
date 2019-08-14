@@ -49,8 +49,10 @@ export class LanguageAppConfigService {
   }
 
   private saveOriginalBaseHref() {
+    console.log('is server', this.isServer, 'first load', this.firstLoadDone);
     if (!this.isServer && !this.firstLoadDone) {
       firstLoadDone = true;
+      console.log('originalBaseHref', this.baseHref);
       this.originalBaseHref = this.baseHref;
     }
   }
