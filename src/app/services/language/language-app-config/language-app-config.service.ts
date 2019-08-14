@@ -20,6 +20,7 @@ export class LanguageAppConfigService {
     @Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) private platformId,
   ) {
+    console.log('LanguageAppConfigService');
     this.detectPlatform();
     this.saveOriginalBaseHref();
   }

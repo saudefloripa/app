@@ -4,6 +4,7 @@ import { environment } from '@env/environment';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppLanguageLocaleInitializer } from './functions';
+import { LanguageAppConfigModule } from './language-app-config/language-app-config.module';
 import { LanguageInitializerModule } from './language-initializer/language-initializer.module';
 import { LanguageService } from './language.service';
 
@@ -27,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     AppLanguageLocaleInitializer,
+    LanguageAppConfigModule,
     LanguageService,
   ],
 })
