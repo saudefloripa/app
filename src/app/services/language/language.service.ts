@@ -64,12 +64,12 @@ export class LanguageService {
 
   private replaceLanguageInUrl(language: I18nLocale) {
     const appBasePath = this.languageAppConfigService.originalBaseHref;
-    const currentPath = `${location.pathname}${location.search}`;
-    const currentPathslices = currentPath.replace(appBasePath, '').split('/');
-    currentPathslices[0] = language;
-    const newPath = `${appBasePath}${currentPathslices.join('/')}`;
-    const newUrl = location.href.replace(currentPath, newPath);
-    console.log('>>>>>>>> AQUI 7', appBasePath, currentPath, newPath, newUrl);
+    const locationWithoutBasePath = location.pathname.replace(appBasePath, '');
+    const currentPathslices = locationWithoutBasePath.split('/');
+    currentPathslices[1] = language;
+    const translatedLocationWithoutBasePath = `${currentPathslices.join('/')}`;
+    const newUrl = location.href.replace(locationWithoutBasePath, translatedLocationWithoutBasePath);
+    console.log('>>>>>>>> AQUI 8', appBasePath, locationWithoutBasePath, translatedLocationWithoutBasePath, newUrl);
     this.replaceUrl(newUrl);
   }
 
